@@ -23,7 +23,7 @@ def add_tasks_from_file(file, project, priority, indent, date):
         if indent:
             request += '&indent=' + indent
         if date:
-            request += '&date_string' + date
+            request += '&date_string=' + date
         r = requests.get(request)
 
 if __name__ == '__main__':
