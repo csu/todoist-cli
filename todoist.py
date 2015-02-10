@@ -7,7 +7,7 @@ token = AccountCredentials.TODOIST_API_TOKEN
 
 def add_task(task, project=None, priority=None, indent=None, date=None):
     # four spaces = further indent
-    if task.startswith('    '):
+    while task.startswith('    '):
         task = task[4:]
         if indent < 4:
             indent += 1
@@ -21,9 +21,9 @@ def add_task(task, project=None, priority=None, indent=None, date=None):
     if project:
         request += '&project_id=' + project
     if priority:
-        request += '&priority=' + priority
+        request += '&priority=' + str(priority)
     if indent:
-        request += '&indent=' + indent
+        request += '&indent=' + str(indent)
     if date:
         request += '&date_string=' + date
     r = requests.get(request)
