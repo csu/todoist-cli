@@ -39,7 +39,7 @@ def add_tasks_from_file(file, project, priority, indent, date):
     with open(file) as f:
         content = f.readlines()
     for item in content:
-        add_task(item, project, priority, indent, date)
+        add_task(item, project, int(priority), int(indent), date)
 
 if __name__ == '__main__':
     add_tasks_from_file()
