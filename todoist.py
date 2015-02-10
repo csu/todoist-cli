@@ -7,8 +7,9 @@ token = AccountCredentials.TODOIST_API_TOKEN
 
 def add_task(task, project=None, priority=None, indent=None, date=None):
     task = urllib.quote(task)
-    date = urllib.quote(date)
-    
+    if date:
+        date = urllib.quote(date)
+
     request = 'https://api.todoist.com/API/addItem?content=' + task + '&token=' + token
     if project:
         request += '&project_id=' + project
