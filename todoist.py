@@ -10,8 +10,8 @@ def add_task(task, project=None, priority=None, indent=None, date=None):
     if task.startswith('    '):
         task = task[4:]
         if indent < 4:
-            indent++
-            
+            indent += 1
+
     task = urllib.quote(task)
 
     if date:
