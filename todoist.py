@@ -6,7 +6,14 @@ import urllib
 token = AccountCredentials.TODOIST_API_TOKEN
 
 def add_task(task, project=None, priority=None, indent=None, date=None):
+    # four spaces = further indent
+    if task.startswith('    '):
+        task = task[4:]
+        if indent < 4:
+            indent++
+            
     task = urllib.quote(task)
+
     if date:
         date = urllib.quote(date)
 
