@@ -23,3 +23,5 @@ Options:
   -d, --date TEXT       due date (Todoist-formatted date string)
   --help                Show this message and exit.
 ```
+
+Add four tabs to the start of a line to increment the indent level by 1.
