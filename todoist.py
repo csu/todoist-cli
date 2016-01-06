@@ -1,9 +1,18 @@
-import click
-import AccountCredentials
-import requests
+import os
 import urllib
 
-token = AccountCredentials.TODOIST_API_TOKEN
+import click
+import requests
+
+# put your Todoist API token in ~/.todoist
+config_file = os.path.join(os.path.expanduser('~'), '.todoist')
+token = None
+if os.path.isfile(config_file):
+    with open(config_file) as f:
+        token = f.read().strip()
+if not token:
+    print 'Put your Todoist API token in ~/.todoist'
+    quit()
 
 def add_task(task, project=None, priority=None, indent=None, date=None):
     # four spaces = further indent
