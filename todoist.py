@@ -15,8 +15,15 @@ if not token:
     quit()
 
 def add_task(task, project=None, priority=None, indent=None, date=None):
+    if priority:
+        priority = int(priority)
+    if indent:
+        indent = int(indent)
+
     # four spaces = further indent
     while task.startswith('    '):
+        if not indent:
+            indent = 1
         task = task[4:]
         if indent < 4:
             indent += 1
@@ -48,7 +55,7 @@ def add_tasks_from_file(file, project, priority, indent, date):
     with open(file) as f:
         content = f.readlines()
     for item in content:
-        add_task(item, project, int(priority), int(indent), date)
+        add_task(item, project, priority, indent, date)
 
 if __name__ == '__main__':
     add_tasks_from_file()
