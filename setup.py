@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
   name='todoist-cli',
-  version='0.0.1',
+  version='0.0.2',
   description='A CLI for batch creating Todoist tasks.',
   long_description=open('README').read(),
   author='Christopher Su',
@@ -12,9 +12,12 @@ setup(
   url='https://github.com/csu/todoist-cli',
   packages=find_packages(),
   install_requires=[
-    'click==3.3',
-    'requests==2.4.3',
-    'wsgiref==0.1.2',
+    'certifi==2017.11.5',
+    'chardet==3.0.4',
+    'click==6.7',
+    'idna==2.6',
+    'requests==2.18.4',
+    'urllib3==1.22',
   ],
   entry_points={
     'console_scripts': [
