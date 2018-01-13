@@ -5,9 +5,7 @@ A command line interface for adding tasks to Todoist.
 
 ## Installation
 ```bash
-git clone https://github.com/csu/todoist-cli.git
-cd todoist-cli
-pip install -r requirements.txt
+pip install todoist-cli
 ```
 
 ## Usage
