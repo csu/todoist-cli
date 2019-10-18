@@ -17,7 +17,7 @@ setup(
     'click==6.7',
     'idna==2.6',
     'requests==2.18.4',
-    'urllib3==1.22',
+    'urllib3==1.24.2',
   ],
   entry_points={
     'console_scripts': [
