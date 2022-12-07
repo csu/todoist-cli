@@ -12,7 +12,7 @@ setup(
   url='https://github.com/csu/todoist-cli',
   packages=find_packages(),
   install_requires=[
-    'certifi==2017.11.5',
+    'certifi==2022.12.7',
     'chardet==3.0.4',
     'click==6.7',
     'idna==2.6',
